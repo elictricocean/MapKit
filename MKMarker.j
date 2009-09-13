@@ -45,12 +45,18 @@
 - (void)addToMapView:(MKMapView)mapView
 {
     var googleMap = [mapView gMap];
+    CPLog(googleMap);
     googleMap.addOverlay(_gMarker);
 }
 
 - (void)encodeWithCoder:(CPCoder)coder
 {
     [coder encodeObject:[_location.lat(), _location.lng()] forKey:@"location"];
+}
+
+-(GMarker)gMarker
+{
+	return _gMarker;
 }
 
 @end
